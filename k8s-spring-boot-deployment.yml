@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: springboot
-          image: akashkumar01/jhooq-docker-demo:$BUILD_NUMBER
+          image: akashkumar01/jhooq-docker-demo:${-> APP_VERSION}
 
           resources:
             requests:
