@@ -1,65 +1,59 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jhooq-springboot
+  name: hello-app
+  namespace: default
 spec:
-  replicas: 2
   selector:
     matchLabels:
-      app: jhooq-springboot
+      app: hello
+  replicas: 3
   template:
     metadata:
       labels:
-        app: jhooq-springboot
+        app: hello
     spec:
       containers:
-        - name: springboot
-          image: my_image:latest 
+      - name: hello
+        image: akashkumar01/img-captain-houzspa:2
 
-          resources:
-            requests:
-              memory: "128Mi"
-              cpu: "512m"
-            limits:
-              memory: "128Mi"
-              cpu: "512m"
 
-          ports:
-            - containerPort: 8080
-
-          readinessProbe:
-            httpGet:
-              path: /hello
-              port: 8080
-            initialDelaySeconds: 15
-            periodSeconds: 10
-
-          livenessProbe:
-            httpGet:
-              path: /hello
-              port: 8080
-            initialDelaySeconds: 15
-            periodSeconds: 10
-
-          startupProbe:
-            httpGet:
-              path: /hello
-              port: 8080
-            failureThreshold: 30
-            periodSeconds: 10
-
-          env:
-            - name: PORT
-              value: "8080"
 ---
+
 apiVersion: v1
 kind: Service
 metadata:
-  name: jhooq-springboot
+  name: hello-service
+  namespace: default
+  labels:
+    app: hello
 spec:
-  type: LoadBalancer
-  ports:
-    - port: 80
-      targetPort: 8080
+  type: ClusterIP
   selector:
-    app: jhooq-springboot
+    app: hello
+  ports:
+  - port: 80
+    targetPort: 3001
+    protocol: TCP
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: test-ingress
+  namespace: default
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: kubernetes.tulumeats.mx
+    http:
+      paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: hello-service
+              port:
+                number: 80
+
