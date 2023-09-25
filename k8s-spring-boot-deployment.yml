@@ -15,8 +15,8 @@ spec:
         app: hello
     spec:
       containers:
-      - name: springboot
-        image: springboot
+      - name: akash
+        image: 
 
 
 ---
