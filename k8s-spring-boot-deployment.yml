@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-app
+  name: jhooq-springboot
   namespace: default
 spec:
   selector:
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: hello
-        image: akashkumar01/img-captain-houzspa:2
+        image: springboot
 
 
 ---
