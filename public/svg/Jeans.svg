@@ -1,0 +1,36 @@
+<svg
+                                                  xmlns="http://www.w3.org/2000/svg"
+                                                  width="15"
+                                                  height="18"
+                                                  viewBox="0 0 23 22"
+                                                  fill="none"
+                                                >
+                                                  <path
+                                                    d="M16.75 20.8333H22L19.6667 1H3.33333L1 20.8333H6.25L11.5 8.4375L16.75 20.8333Z"
+                                                    stroke="white"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                  />
+                                                  <path
+                                                    d="M11.5 1V3.72708"
+                                                    stroke="white"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                  />
+                                                  <path
+                                                    d="M7.41639 1C7.41639 1 7.41639 3.975 6.24973 4.96667C5.08306 5.95833 2.69141 6.45417 2.69141 6.45417"
+                                                    stroke="white"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                  />
+                                                  <path
+                                                    d="M15.583 1C15.583 1 15.583 3.975 16.7497 4.96667C17.9163 5.95833 20.308 6.45417 20.308 6.45417"
+                                                    stroke="white"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                  />
+                                                </svg>

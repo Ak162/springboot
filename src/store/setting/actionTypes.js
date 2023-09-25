@@ -1,0 +1,6 @@
+export const GET_SETTING = "GET_SETTING";
+export const GET_SETTING_FAIL = "GET_SETTING_FAIL";
+export const GET_SETTING_SUCCESS = "GET_SETTING_SUCCESS";
+
+
+
